@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using RremotingDemo.ContextDemo;
+using System;
 using System.IO;
-using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Messaging;
-using System.Text;
+using System.Threading;
 
 namespace RremotingDemo.Server
 {
-    public class TestChannelSink : BaseChannelObjectWithProperties, IServerChannelSink
+    public class ContextChannelSink : BaseChannelObjectWithProperties, IServerChannelSink
     {
         public IServerChannelSink NextChannelSink { get; }
 
-        public TestChannelSink(IServerChannelSink nextChannelSink)
+        public ContextChannelSink(IServerChannelSink nextChannelSink)
         {
             NextChannelSink = nextChannelSink;
         }
@@ -30,7 +29,6 @@ namespace RremotingDemo.Server
         public ServerProcessing ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, out IMessage responseMsg, out ITransportHeaders responseHeaders, out Stream responseStream)
         {
             var processing = NextChannelSink.ProcessMessage(sinkStack, requestMsg, requestHeaders, requestStream, out responseMsg, out responseHeaders, out responseStream);
-
             return processing;
         }
     }

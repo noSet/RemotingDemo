@@ -1,4 +1,5 @@
-﻿using RremotingDemo.LifetimeDemo;
+﻿using RremotingDemo.ContextDemo;
+using RremotingDemo.LifetimeDemo;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,8 +19,9 @@ namespace RremotingDemo.Server
             };
 
             IServerChannelSinkProvider sinkProvider = new TestChannelSinkProvider()
-                .AddLastServerChannelSinkProvider(new ReportChannelSinkProvider())
+                //.AddLastServerChannelSinkProvider(new ReportChannelSinkProvider())
                 .AddLastServerChannelSinkProvider(new BinaryServerFormatterSinkProvider())
+                .AddLastServerChannelSinkProvider(new ContextChannelSinkProvider())
                 //.AddLastServerChannelSinkProvider(new BinaryServerFormatterSinkProvider())
                 .AddLastServerChannelSinkProvider(new TestChannelSinkProvider());
 
@@ -31,6 +33,7 @@ namespace RremotingDemo.Server
             RemotingConfiguration.RegisterActivatedServiceType(typeof(ClientActivatedService));
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(ServerActivatedSingleCallService), nameof(ServerActivatedSingleCallService), WellKnownObjectMode.SingleCall);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(ServerActivatedSingletonService), nameof(ServerActivatedSingletonService), WellKnownObjectMode.Singleton);
+            RemotingConfiguration.RegisterWellKnownServiceType(typeof(ContextDemoService), nameof(ContextDemoService), WellKnownObjectMode.Singleton);
 
             Console.WriteLine("started ...");
             Console.Read();

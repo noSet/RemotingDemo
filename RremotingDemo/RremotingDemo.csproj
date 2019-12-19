@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextDemo\ContextDemoService.cs" />
     <Compile Include="LifetimeDemo\ClientActivatedService.cs" />
     <Compile Include="LifetimeDemo\DemoService.cs" />
     <Compile Include="LifetimeDemo\ServerActivatedSingleCallService.cs" />
