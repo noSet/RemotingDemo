@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientActivatedService.cs" />
-    <Compile Include="DemoService.cs" />
-    <Compile Include="ServerActivatedSingleCallService.cs" />
-    <Compile Include="ServerActivatedSingletonService.cs" />
+    <Compile Include="LifetimeDemo\ClientActivatedService.cs" />
+    <Compile Include="LifetimeDemo\DemoService.cs" />
+    <Compile Include="LifetimeDemo\ServerActivatedSingleCallService.cs" />
+    <Compile Include="LifetimeDemo\ServerActivatedSingletonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RremotingDemo
+namespace RremotingDemo.LifetimeDemo
 {
-    public class ServerActivatedSingleCallService : DemoService
+    public class ServerActivatedSingletonService : DemoService
     {
     }
 }

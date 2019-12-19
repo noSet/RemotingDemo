@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RremotingDemo
+namespace RremotingDemo.LifetimeDemo
 {
     public class DemoService : MarshalByRefObject
     {
