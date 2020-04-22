@@ -1,9 +1,11 @@
 ﻿using RremotingDemo.ContextDemo;
 using RremotingDemo.LifetimeDemo;
 using System;
+using System.Collections;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
+using System.Runtime.Serialization.Formatters;
 using System.Threading;
 
 namespace RremotingDemo.Client
@@ -14,14 +16,21 @@ namespace RremotingDemo.Client
         {
             Thread.Sleep(400);
 
-            TcpChannel channel = new TcpChannel();
+            var hashtable = new Hashtable
+            {
+                ["port"] = 0
+            };
+
+            TcpChannel channel = new TcpChannel(hashtable, new BinaryClientFormatterSinkProvider(), new BinaryServerFormatterSinkProvider() { TypeFilterLevel = TypeFilterLevel.Full });
             ChannelServices.RegisterChannel(channel, false);
             RemotingConfiguration.RegisterWellKnownClientType(typeof(ServerActivatedSingleCallService), "tcp://localhost:8226/ServerActivatedSingleCallService");
             RemotingConfiguration.RegisterWellKnownClientType(typeof(ServerActivatedSingletonService), "tcp://localhost:8226/ServerActivatedSingletonService");
             RemotingConfiguration.RegisterWellKnownClientType(typeof(ContextDemoService), "tcp://localhost:8226/ContextDemoService");
+            RemotingConfiguration.RegisterWellKnownClientType(typeof(CountingService), "tcp://localhost:8226/CountingService");
 
-            new ContextTest().Run();
+            //new ContextTest().Run();
             //new LifetimeTest().Run();
+            new CountingTest().Run();
 
             Console.ReadLine();
         }

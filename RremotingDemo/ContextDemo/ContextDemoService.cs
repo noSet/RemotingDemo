@@ -53,6 +53,8 @@ namespace RremotingDemo.ContextDemo
         ConcurrentQueue<Record> _printQueue = new ConcurrentQueue<Record>();
         ConcurrentBag<Record> _logRecords = new ConcurrentBag<Record>();
 
+        private int _requestCount = 0;
+
         public ContextDemoService()
         {
             new Thread(() =>
@@ -78,6 +80,8 @@ namespace RremotingDemo.ContextDemo
 
         public void SomeTest(string str)
         {
+            _requestCount++;
+
             PrintLog(new Record("Response Thread", str));
 
             new Thread(() =>
