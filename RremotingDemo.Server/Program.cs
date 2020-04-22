@@ -36,6 +36,7 @@ namespace RremotingDemo.Server
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(ServerActivatedSingletonService), nameof(ServerActivatedSingletonService), WellKnownObjectMode.Singleton);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(ContextDemoService), nameof(ContextDemoService), WellKnownObjectMode.Singleton);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(CountingService), nameof(CountingService), WellKnownObjectMode.Singleton);
+            RemotingConfiguration.RegisterWellKnownServiceType(typeof(EmployeeQueryService), nameof(EmployeeQueryService), WellKnownObjectMode.Singleton);
 
             Console.WriteLine("started ...");
             Console.Read();

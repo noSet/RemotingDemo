@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters;
 using System.Threading;
 using RremotingDemo.ContextDemo;
 using RremotingDemo.EventDemo;
+using RremotingDemo.InterfaceDemo;
 using RremotingDemo.LifetimeDemo;
 
 namespace RremotingDemo.Client
@@ -28,10 +29,12 @@ namespace RremotingDemo.Client
             RemotingConfiguration.RegisterWellKnownClientType(typeof(ServerActivatedSingletonService), "tcp://localhost:8226/ServerActivatedSingletonService");
             RemotingConfiguration.RegisterWellKnownClientType(typeof(ContextDemoService), "tcp://localhost:8226/ContextDemoService");
             RemotingConfiguration.RegisterWellKnownClientType(typeof(CountingService), "tcp://localhost:8226/CountingService");
+            RemotingConfiguration.RegisterWellKnownClientType(typeof(IEmployeeQueryService), "tcp://localhost:8226/EmployeeQueryService");
 
             //new ContextTest().Run();
             //new LifetimeTest().Run();
-            new EventTest().Run();
+            //new EventTest().Run();
+            new InterfaceTest().Run();
 
             Console.ReadLine();
         }

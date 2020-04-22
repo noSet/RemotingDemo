@@ -43,6 +43,7 @@
     <Compile Include="ContextDemo\ContextDemoService.cs" />
     <Compile Include="EventDemo\CountEventWrapper.cs" />
     <Compile Include="EventDemo\CountingService.cs" />
+    <Compile Include="InterfaceDemo\IEmployeeQueryService.cs" />
     <Compile Include="LifetimeDemo\ClientActivatedService.cs" />
     <Compile Include="LifetimeDemo\DemoService.cs" />
     <Compile Include="LifetimeDemo\ServerActivatedSingleCallService.cs" />
