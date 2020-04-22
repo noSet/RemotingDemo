@@ -1,12 +1,12 @@
-﻿using RremotingDemo.ContextDemo;
-using RremotingDemo.LifetimeDemo;
-using System;
+﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Serialization.Formatters;
+using RremotingDemo.ContextDemo;
+using RremotingDemo.EventDemo;
+using RremotingDemo.LifetimeDemo;
 
 namespace RremotingDemo.Server
 {

@@ -1,12 +1,13 @@
-﻿using RremotingDemo.ContextDemo;
-using RremotingDemo.LifetimeDemo;
-using System;
+﻿using System;
 using System.Collections;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Serialization.Formatters;
 using System.Threading;
+using RremotingDemo.ContextDemo;
+using RremotingDemo.EventDemo;
+using RremotingDemo.LifetimeDemo;
 
 namespace RremotingDemo.Client
 {
@@ -30,7 +31,7 @@ namespace RremotingDemo.Client
 
             //new ContextTest().Run();
             //new LifetimeTest().Run();
-            new CountingTest().Run();
+            new EventTest().Run();
 
             Console.ReadLine();
         }

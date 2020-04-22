@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextTest.cs" />
-    <Compile Include="CountingTest.cs" />
+    <Compile Include="EventTest.cs" />
     <Compile Include="LifetimeTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

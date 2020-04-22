@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace RremotingDemo
+namespace RremotingDemo.EventDemo
 {
     [Serializable]
     public class CountEventArgs : EventArgs
@@ -16,8 +16,6 @@ namespace RremotingDemo
             Count = count;
         }
     }
-
-
 
     public class CountingService : MarshalByRefObject
     {
